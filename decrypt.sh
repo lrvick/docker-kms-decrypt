@@ -3,7 +3,7 @@
 source /etc/profile
 
 unset IFS
-rm /out/secrets.env
+rm /out/secrets.env 2> /dev/null
 for line in $(env | egrep '^KMS_'); do
 	key="${line%%=*}"
 	encrypted_value=${line#*=}
